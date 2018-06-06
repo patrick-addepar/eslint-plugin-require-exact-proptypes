@@ -1,5 +1,8 @@
 # eslint-plugin-require-exact-proptypes
 
+[![npm version](https://badge.fury.io/js/eslint-plugin-require-exact-proptypes.svg)](https://badge.fury.io/js/eslint-plugin-require-exact-proptypes)
+[![Build Status](https://travis-ci.org/patrick-addepar/eslint-plugin-require-exact-proptypes.svg?branch=master)](https://travis-ci.org/patrick-addepar/eslint-plugin-require-exact-proptypes)
+
 An eslint plugin to enforce the usage of the [prop-types-exact](https://github.com/airbnb/prop-types-exact) package by AirBnb.
 
 _Note on usage: This eslint rule requires that the ```prop-types-exact``` package be imported as ```exact```_
