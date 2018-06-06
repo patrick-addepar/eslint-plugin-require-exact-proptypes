@@ -1,6 +1,65 @@
 # eslint-plugin-require-exact-proptypes
 
-Enforces the usage of prop-types-exact package.
+An eslint plugin to enforce the usage of the [prop-types-exact](https://github.com/airbnb/prop-types-exact) package by AirBnb.
+
+_Note on usage: This eslint rule requires that the ```prop-types-exact``` package be imported as ```exact```_
+
+## Rule Cases
+
+### Good
+
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
+
+const Foo = props => <span>Bar is: { props.bar }</span>;
+
+Foo.propTypes = exact({ bar: PropTypes.string, });
+
+export default Foo;
+```
+-- or --
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
+
+export default class Foo extends Component {
+    
+    static propTypes = exact({ bar: PropTypes.string });
+
+    render() { 
+        return <span>Bar is: { props.bar }</span>;
+    }
+}
+```
+
+### Bad
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Foo = props => <span>Bar is: { props.bar }</span>;
+
+Foo.propTypes = { bar: PropTypes.string, };
+
+export default Foo;
+```
+-- or --
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+export default class Foo extends Component {
+    
+    static propTypes = { bar: PropTypes.string };
+
+    render() { 
+        return <span>Bar is: { props.bar }</span>;
+    }
+}
+```
 
 ## Installation
 
@@ -36,15 +95,10 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "require-exact-proptypes/rule-name": 2
+        "require-exact-proptypes/require-exact-proptypes": 2
     }
 }
 ```
-
-## Supported Rules
-
-* Fill in provided rules here
-
 
 
 

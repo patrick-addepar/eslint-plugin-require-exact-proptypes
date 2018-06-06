@@ -1,36 +1,68 @@
 # Requires all propTypes to be wrapped with call to exact. (require-exact-proptypes)
 
-Please describe the origin of the rule here.
+Many organizations choose to detail the usage of ```prop-types-exact``` by AirBnb to be a best practice. This rule enforces its usage.
 
 
 ## Rule Details
 
-This rule aims to...
+_This eslint rule requires that the ```prop-types-exact``` package be imported as ```exact```_
 
 Examples of **incorrect** code for this rule:
 
-```js
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// fill me in
+const Foo = props => <span>Bar is: { props.bar }</span>;
 
+Foo.propTypes = { bar: PropTypes.string, };
+
+export default Foo;
+```
+-- or --
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+export default class Foo extends Component {
+    
+    static propTypes = { bar: PropTypes.string };
+
+    render() { 
+        return <span>Bar is: { props.bar }</span>;
+    }
+}
 ```
 
 Examples of **correct** code for this rule:
 
-```js
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 
-// fill me in
+const Foo = props => <span>Bar is: { props.bar }</span>;
 
+Foo.propTypes = exact({ bar: PropTypes.string, });
+
+export default Foo;
 ```
+-- or --
+```jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 
-### Options
+export default class Foo extends Component {
+    
+    static propTypes = exact({ bar: PropTypes.string });
 
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
+    render() { 
+        return <span>Bar is: { props.bar }</span>;
+    }
+}
+```
 
 ## Further Reading
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+For more information about the ```prop-types-exact``` package visit https://github.com/airbnb/prop-types-exact.
