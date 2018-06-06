@@ -1,13 +1,13 @@
 {
   "name": "eslint-plugin-require-exact-proptypes",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Enforces the usage of prop-types-exact package.",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Patrick Paul",
+  "author": "Patrick Paul <patrick.paul@addepar.com>",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
