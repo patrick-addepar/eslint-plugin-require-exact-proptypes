@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-require-exact-proptypes",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Enforces the usage of prop-types-exact package.",
   "keywords": [
     "eslint",
