@@ -11,9 +11,11 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/patrick-addepar/eslint-plugin-require-exact-proptypes.git"
+      "url": "https://github.com/patrick-addepar/eslint-plugin-require-exact-proptypes"
     }
   ],
+  "homepage": "https://github.com/patrick-addepar/eslint-plugin-require-exact-proptypes",
+  "bugs": "https://github.com/patrick-addepar/eslint-plugin-require-exact-proptypes/issues",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
